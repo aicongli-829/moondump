@@ -1,0 +1,15 @@
+.DS_Store
+_build/
+target/
+target
+.mooncakes/
+.moonagent/
+_check.log
+# 本地跑出来的中间产物（对拍输出、JSON 转储文本）一律不进仓库：
+# 里面是真实样本的模块路径与内存布局。
+_scratch/
+# 真实崩溃转储含进程内存，绝不进公开仓库；本地验证用的放 testdata/local/
+testdata/local/
+*.dmp
+# 例外：来自 rust-minidump/breakpad 的公开语料可以提交
+!testdata/*.dmp
