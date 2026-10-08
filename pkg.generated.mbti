@@ -1,0 +1,1046 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "aicongli-829/moondump"
+
+import {
+  "moonbitlang/core/debug",
+  "moonbitlang/core/json",
+}
+
+// Values
+pub fn address_module_line(Array[Module], UInt64) -> String
+
+pub fn architecture_name(UInt16) -> String
+
+pub let architecture_names : Array[(UInt16, String)]
+
+pub let breakpad_info_stream : UInt32
+
+pub let code_view_rsds_signature : UInt32
+
+pub let comment_stream_a : UInt32
+
+pub let comment_stream_w : UInt32
+
+pub let compressed_memory_stream_unverified : UInt32
+
+pub let context_amd64_size : UInt32
+
+pub fn context_arch_by_size(UInt32) -> UInt16?
+
+pub let context_arm64_size : UInt32
+
+pub fn context_expected_size(UInt16) -> UInt32?
+
+pub fn context_flag_bits(UInt16) -> Array[(UInt32, String)]
+
+pub fn context_pointer_size(Context) -> UInt32?
+
+pub fn context_summary(Context) -> String
+
+pub let context_x86_size : UInt32
+
+pub let crashpad_info_stream : UInt32
+
+pub fn describe_context_flags(UInt16, UInt32) -> Array[String]
+
+pub fn describe_error(ParseError) -> String
+
+pub fn describe_exception_flags(UInt32) -> Array[String]
+
+pub fn describe_minidump_type(UInt64) -> Array[String]
+
+pub fn describe_misc_flags(UInt32) -> Array[String]
+
+pub fn describe_suite_mask(UInt16) -> Array[String]
+
+pub fn describe_thread_dump_flags(UInt32) -> Array[String]
+
+pub fn error_kind(ParseError) -> String
+
+pub fn exception_code_label(UInt32, UInt32) -> String
+
+pub fn exception_code_name(UInt32) -> String
+
+pub let exception_code_names : Array[(UInt32, String)]
+
+pub let exception_maximum_parameters : UInt32
+
+pub let exception_record_size : UInt32
+
+pub let exception_stream : UInt32
+
+pub let exception_stream_size : UInt32
+
+pub let expected_signature : UInt32
+
+pub fn find_module(Array[Module], UInt64) -> (Int32, Module)?
+
+pub fn find_thread_by_id(Array[Thread], UInt32) -> (Int32, Thread)?
+
+pub let fixed_file_info_signature : UInt32
+
+pub fn frame_chain_supported(Context) -> Bool
+
+pub let function_table_descriptor_size : UInt32
+
+pub let function_table_header_size : UInt32
+
+pub fn function_table_layout_name(FunctionTableLayout) -> String
+
+pub let function_table_stream : UInt32
+
+pub fn get_stream(Array[StreamEntry], UInt32) -> StreamEntry?
+
+pub let handle_data_header_size : UInt32
+
+pub let handle_data_stream : UInt32
+
+pub let handle_descriptor_2_size : UInt32
+
+pub let handle_descriptor_size : UInt32
+
+pub let handle_operation_list_stream : UInt32
+
+pub fn header_format_version(UInt32) -> UInt32
+
+pub fn header_format_version_is_known(UInt32) -> Bool
+
+pub fn hex_uint(UInt64) -> String
+
+pub let ipt_trace_stream : UInt32
+
+pub fn json_failure(String, String) -> @json.Json
+
+pub fn json_list_cap_value() -> Int32
+
+pub fn json_options_default() -> JsonOptions
+
+pub fn json_report_text(@json.Json) -> String
+
+pub let known_format_version : UInt32
+
+pub let last_reserved_stream : UInt32
+
+pub let linux_signal_names : Array[(UInt32, String)]
+
+pub let memory_64_header_size : UInt32
+
+pub let memory_64_list_stream : UInt32
+
+pub fn memory_access_kind(UInt32, Array[UInt64]) -> String?
+
+pub let memory_descriptor_size : UInt32
+
+pub fn memory_info_committed_bytes(Array[MemoryInfo]) -> UInt64
+
+pub fn memory_info_executable_outside_modules(Array[MemoryInfo], Array[Module]) -> Array[MemoryInfo]
+
+pub fn memory_info_for_module(Array[MemoryInfo], Module) -> Array[MemoryInfo]
+
+pub let memory_info_list_header_size : UInt32
+
+pub let memory_info_list_stream : UInt32
+
+pub let memory_info_size : UInt32
+
+pub let memory_list_header_size : UInt32
+
+pub let memory_list_stream : UInt32
+
+pub let memory_protection_bases : Array[(UInt32, String)]
+
+pub fn memory_protection_bits(UInt32) -> Array[String]
+
+pub let memory_protection_flags : Array[(UInt32, String)]
+
+pub fn memory_protection_is_executable(UInt32) -> Bool
+
+pub fn memory_protection_is_writable(UInt32) -> Bool
+
+pub fn memory_protection_name(UInt32) -> String
+
+pub fn memory_state_name(UInt32) -> String
+
+pub let memory_state_names : Array[(UInt32, String)]
+
+pub fn memory_type_name(UInt32) -> String
+
+pub let memory_type_names : Array[(UInt32, String)]
+
+pub let minidump_type_flags : Array[(UInt64, String)]
+
+pub let misc1_process_id : UInt32
+
+pub let misc1_process_times : UInt32
+
+pub let misc1_processor_power_info : UInt32
+
+pub let misc3_process_execute_flags : UInt32
+
+pub let misc3_process_integrity : UInt32
+
+pub let misc3_protected_process : UInt32
+
+pub let misc3_timezone : UInt32
+
+pub let misc4_buildstring : UInt32
+
+pub let misc5_process_cookie : UInt32
+
+pub let misc_info_flag_bits : Array[(UInt32, String)]
+
+pub let misc_info_stream : UInt32
+
+pub let misc_info_v1_size : UInt32
+
+pub let misc_info_v2_size : UInt32
+
+pub let misc_info_v3_size : UInt32
+
+pub let misc_info_v4_size : UInt32
+
+pub let misc_info_v5_size : UInt32
+
+pub fn misc_info_version(UInt32) -> UInt32
+
+pub fn module_debug_id(Module) -> String
+
+pub let module_list_stream : UInt32
+
+pub let module_size : UInt32
+
+pub fn normalize_debug_id(String) -> String
+
+pub fn open_dump(Bytes) -> Dump raise ParseError
+
+pub fn parse_symbol_file(String) -> SymbolFile
+
+pub fn platform_id_name(UInt32) -> String
+
+pub fn platform_uses_signals(UInt32) -> Bool
+
+pub let process_vm_counters_stream : UInt32
+
+pub fn product_type_name(Byte) -> String
+
+pub fn quad_version(UInt32, UInt32) -> String
+
+pub fn signal_name(UInt32) -> String?
+
+pub fn stack_walk_options_default() -> StackWalkOptions
+
+pub fn stream_type_name(UInt32) -> String
+
+pub let suite_mask_bits : Array[(UInt16, String)]
+
+pub fn symbol_file_file(SymbolFile, Int64) -> String
+
+pub fn symbol_file_function_at(SymbolFile, UInt64) -> SymFunction?
+
+pub fn symbol_file_public_at(SymbolFile, UInt64) -> SymPublic?
+
+pub fn symbol_file_resolve(SymbolFile, UInt64) -> ResolvedFrame?
+
+pub fn symbol_store_add(SymbolStore, String, String) -> Bool
+
+pub fn symbol_store_find(SymbolStore, String, String) -> SymbolFile?
+
+pub fn symbol_store_find_with_source(SymbolStore, String, String) -> (String, SymbolFile)?
+
+pub fn symbol_store_match_count(SymbolStore, String, String) -> Int32
+
+pub fn symbol_store_new() -> SymbolStore
+
+pub fn symbol_target_line(SymbolTarget) -> String
+
+pub fn symbolize_frame(StackFrame, Array[Module], SymbolStore) -> SymbolTarget
+
+pub let system_info_size : UInt32
+
+pub let system_info_stream : UInt32
+
+pub let system_memory_info_stream : UInt32
+
+pub let thread_dump_flag_names : Array[(UInt32, String)]
+
+pub fn thread_dump_flags_name(UInt32) -> String
+
+pub let thread_ex_list_stream : UInt32
+
+pub let thread_ex_size : UInt32
+
+pub let thread_info_list_header_size : UInt32
+
+pub let thread_info_list_stream : UInt32
+
+pub let thread_info_size : UInt32
+
+pub fn thread_infos_started_outside_modules(Array[ThreadInfo], Array[Module]) -> Array[ThreadInfo]
+
+pub let thread_list_stream : UInt32
+
+pub let thread_name_entry_size : UInt32
+
+pub fn thread_name_for(Array[ThreadName], UInt32) -> String?
+
+pub let thread_names_header_size : UInt32
+
+pub let thread_names_stream : UInt32
+
+pub let thread_size : UInt32
+
+pub let thread_walk_limit : Int32
+
+pub fn time_zone_offset_text(Int32) -> String
+
+pub let token_stream : UInt32
+
+pub let unloaded_module_list_header_size : UInt32
+
+pub let unloaded_module_list_stream : UInt32
+
+pub let unloaded_module_size : UInt32
+
+pub let unused_stream : UInt32
+
+pub fn version_string(SystemInfo) -> String
+
+pub fn x86_family_model_stepping(SystemInfo) -> (Int32, Int32, Int32)
+
+// Errors
+#derive(@debug.Debug)
+pub(all) suberror ParseError {
+  InvalidSignature(UInt32)
+  RvaTooLarge(UInt64)
+  Truncated(UInt64, UInt64, UInt64)
+  BadStreamCount(UInt32)
+  InvalidUtf16(UInt32)
+  StreamTooSmall(UInt32, UInt64, UInt64)
+  ListSizeMismatch(UInt32, UInt64, UInt64)
+  ContextSizeMismatch(UInt16, UInt32, UInt32)
+}
+pub fn ParseError::to_repr(Self) -> @debug.Repr
+
+// Types and methods
+#derive(Eq, @debug.Debug)
+pub(all) enum CodeView {
+  Rsds(CodeViewRsds)
+  Unrecognized(UInt32)
+  Missing
+  Corrupt
+}
+pub fn CodeView::equal(Self, Self) -> Bool
+pub fn CodeView::not_equal(Self, Self) -> Bool
+pub fn CodeView::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct CodeViewRsds {
+  debug_id : String
+  age : UInt32
+  pdb_name : String
+}
+pub fn CodeViewRsds::equal(Self, Self) -> Bool
+pub fn CodeViewRsds::not_equal(Self, Self) -> Bool
+pub fn CodeViewRsds::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) enum Context {
+  X86(ContextX86)
+  Amd64(ContextAmd64)
+  Arm64(ContextArm64)
+  Undecoded(ContextUndecoded)
+}
+pub fn Context::context_flags(Self) -> UInt32
+pub fn Context::equal(Self, Self) -> Bool
+pub fn Context::flag_architecture(Self) -> UInt16
+pub fn Context::frame_pointer(Self) -> UInt64?
+pub fn Context::instruction_pointer(Self) -> UInt64?
+pub fn Context::layout_name(Self) -> String
+pub fn Context::not_equal(Self, Self) -> Bool
+pub fn Context::registers(Self) -> Array[(String, String)]
+pub fn Context::stack_pointer(Self) -> UInt64?
+pub fn Context::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ContextAmd64 {
+  context_flags : UInt32
+  mx_csr : UInt32
+  seg_cs : UInt16
+  seg_ds : UInt16
+  seg_es : UInt16
+  seg_fs : UInt16
+  seg_gs : UInt16
+  seg_ss : UInt16
+  eflags : UInt32
+  dr0 : UInt64
+  dr1 : UInt64
+  dr2 : UInt64
+  dr3 : UInt64
+  dr6 : UInt64
+  dr7 : UInt64
+  rax : UInt64
+  rcx : UInt64
+  rdx : UInt64
+  rbx : UInt64
+  rsp : UInt64
+  rbp : UInt64
+  rsi : UInt64
+  rdi : UInt64
+  r8 : UInt64
+  r9 : UInt64
+  r10 : UInt64
+  r11 : UInt64
+  r12 : UInt64
+  r13 : UInt64
+  r14 : UInt64
+  r15 : UInt64
+  rip : UInt64
+}
+pub fn ContextAmd64::equal(Self, Self) -> Bool
+pub fn ContextAmd64::not_equal(Self, Self) -> Bool
+pub fn ContextAmd64::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ContextArm64 {
+  context_flags : UInt32
+  cpsr : UInt32
+  x : Array[UInt64]
+  sp : UInt64
+  pc : UInt64
+  fpcr : UInt32
+  fpsr : UInt32
+  bcr : Array[UInt32]
+  bvr : Array[UInt64]
+  wcr : Array[UInt32]
+  wvr : Array[UInt64]
+}
+pub fn ContextArm64::equal(Self, Self) -> Bool
+pub fn ContextArm64::not_equal(Self, Self) -> Bool
+pub fn ContextArm64::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ContextUndecoded {
+  architecture : UInt16
+  declared_size : UInt32
+  reason : String
+}
+pub fn ContextUndecoded::equal(Self, Self) -> Bool
+pub fn ContextUndecoded::not_equal(Self, Self) -> Bool
+pub fn ContextUndecoded::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ContextX86 {
+  context_flags : UInt32
+  dr0 : UInt32
+  dr1 : UInt32
+  dr2 : UInt32
+  dr3 : UInt32
+  dr6 : UInt32
+  dr7 : UInt32
+  seg_gs : UInt32
+  seg_fs : UInt32
+  seg_es : UInt32
+  seg_ds : UInt32
+  edi : UInt32
+  esi : UInt32
+  ebx : UInt32
+  edx : UInt32
+  ecx : UInt32
+  eax : UInt32
+  ebp : UInt32
+  eip : UInt32
+  seg_cs : UInt32
+  eflags : UInt32
+  esp : UInt32
+  seg_ss : UInt32
+}
+pub fn ContextX86::equal(Self, Self) -> Bool
+pub fn ContextX86::not_equal(Self, Self) -> Bool
+pub fn ContextX86::to_repr(Self) -> @debug.Repr
+
+pub(all) struct Dump {
+  header : Header
+  data : Bytes
+}
+pub fn Dump::exception(Self, Array[StreamEntry]) -> Exception? raise ParseError
+pub fn Dump::function_table(Self, Array[StreamEntry]) -> FunctionTableInfo? raise ParseError
+pub fn Dump::handles(Self, Array[StreamEntry]) -> Array[Handle]? raise ParseError
+pub fn Dump::memory_info_list(Self, Array[StreamEntry]) -> Array[MemoryInfo]? raise ParseError
+pub fn Dump::memory_map(Self, Array[StreamEntry]) -> MemoryMap? raise ParseError
+pub fn Dump::memory_regions(Self, Array[StreamEntry]) -> Array[MemoryRegion]? raise ParseError
+pub fn Dump::misc_info(Self, Array[StreamEntry]) -> MiscInfo? raise ParseError
+pub fn Dump::modules(Self, Array[StreamEntry]) -> ModuleList? raise ParseError
+pub fn Dump::range_in_file(Self, UInt64, UInt64) -> Bool
+pub fn Dump::read_byte(Self, UInt64) -> Byte raise ParseError
+pub fn Dump::read_context(Self, UInt16, LocationDescriptor) -> Context? raise ParseError
+pub fn Dump::read_exception(Self, StreamEntry) -> Exception raise ParseError
+pub fn Dump::read_function_table(Self, StreamEntry) -> FunctionTableInfo raise ParseError
+pub fn Dump::read_handle_data(Self, StreamEntry) -> Array[Handle] raise ParseError
+pub fn Dump::read_memory_64_list(Self, StreamEntry) -> Array[MemoryRegion] raise ParseError
+pub fn Dump::read_memory_at(Self, MemoryMap, UInt64, Int32) -> Bytes? raise ParseError
+pub fn Dump::read_memory_info_list(Self, StreamEntry) -> Array[MemoryInfo] raise ParseError
+pub fn Dump::read_memory_list(Self, StreamEntry) -> Array[MemoryRegion] raise ParseError
+pub fn Dump::read_misc_info(Self, StreamEntry) -> MiscInfo raise ParseError
+pub fn Dump::read_module_list(Self, StreamEntry) -> ModuleList raise ParseError
+pub fn Dump::read_string(Self, UInt64) -> String raise ParseError
+pub fn Dump::read_system_info(Self, StreamEntry) -> SystemInfo raise ParseError
+pub fn Dump::read_thread_info_list(Self, StreamEntry) -> Array[ThreadInfo] raise ParseError
+pub fn Dump::read_thread_list(Self, StreamEntry) -> Array[Thread] raise ParseError
+pub fn Dump::read_thread_names(Self, StreamEntry) -> Array[ThreadName] raise ParseError
+pub fn Dump::read_uint16(Self, UInt64) -> UInt16 raise ParseError
+pub fn Dump::read_uint32(Self, UInt64) -> UInt32 raise ParseError
+pub fn Dump::read_uint32_at(Self, MemoryMap, UInt64) -> UInt32? raise ParseError
+pub fn Dump::read_uint64(Self, UInt64) -> UInt64 raise ParseError
+pub fn Dump::read_uint64_at(Self, MemoryMap, UInt64) -> UInt64? raise ParseError
+pub fn Dump::read_unloaded_module_list(Self, StreamEntry) -> UnloadedModuleList raise ParseError
+pub fn Dump::report_json(Self, JsonOptions) -> @json.Json
+pub fn Dump::stream_directory(Self) -> Array[StreamEntry] raise ParseError
+pub fn Dump::system_info(Self, Array[StreamEntry]) -> SystemInfo? raise ParseError
+pub fn Dump::thread_infos(Self, Array[StreamEntry]) -> Array[ThreadInfo]? raise ParseError
+pub fn Dump::thread_names(Self, Array[StreamEntry]) -> Array[ThreadName]? raise ParseError
+pub fn Dump::threads(Self, Array[StreamEntry]) -> Array[Thread]? raise ParseError
+pub fn Dump::unloaded_modules(Self, Array[StreamEntry]) -> UnloadedModuleList? raise ParseError
+pub fn Dump::walk_thread_stack(Self, MemoryMap, Array[Module], FunctionTableInfo?, Thread, Context, StackWalkOptions) -> StackWalk raise ParseError
+
+#derive(Eq, @debug.Debug)
+pub(all) struct Exception {
+  thread_id : UInt32
+  code : UInt32
+  flags : UInt32
+  nested_record_address : UInt64
+  address : UInt64
+  number_parameters : UInt32
+  parameters : Array[UInt64]
+  thread_context : LocationDescriptor
+}
+pub fn Exception::equal(Self, Self) -> Bool
+pub fn Exception::fault_address(Self) -> UInt64?
+pub fn Exception::is_memory_access(Self) -> Bool
+pub fn Exception::not_equal(Self, Self) -> Bool
+pub fn Exception::to_repr(Self) -> @debug.Repr
+pub fn Exception::underlying_status(Self) -> UInt64?
+
+#derive(Eq, @debug.Debug)
+pub(all) struct FixedFileInfo {
+  signature : UInt32
+  struct_version : UInt32
+  file_version_hi : UInt32
+  file_version_lo : UInt32
+  product_version_hi : UInt32
+  product_version_lo : UInt32
+  file_flags_mask : UInt32
+  file_flags : UInt32
+  file_os : UInt32
+  file_type : UInt32
+  file_sub_type : UInt32
+  file_date_hi : UInt32
+  file_date_lo : UInt32
+}
+pub fn FixedFileInfo::equal(Self, Self) -> Bool
+pub fn FixedFileInfo::not_equal(Self, Self) -> Bool
+pub fn FixedFileInfo::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct FunctionTable {
+  minimum_address : UInt64
+  maximum_address : UInt64
+  base_address : UInt64
+  entry_count : UInt32
+  inline_entry : (UInt32, UInt32, UInt32)?
+}
+pub fn FunctionTable::equal(Self, Self) -> Bool
+pub fn FunctionTable::not_equal(Self, Self) -> Bool
+pub fn FunctionTable::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct FunctionTableInfo {
+  descriptors : Array[FunctionTable]
+  size_of_descriptor : UInt32
+  size_of_native_descriptor : UInt32
+  size_of_function_entry : UInt32
+  declared_header : UInt32
+  size_of_align_pad : UInt32
+  layout : FunctionTableLayout
+  layout_ok : Bool
+  record_width : UInt64
+  entries_rva : UInt64
+  total_entries : UInt64
+  entries_in_file : Bool
+}
+pub fn FunctionTableInfo::equal(Self, Self) -> Bool
+pub fn FunctionTableInfo::not_equal(Self, Self) -> Bool
+pub fn FunctionTableInfo::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub enum FunctionTableLayout {
+  Declared
+  InlineRecords
+}
+pub fn FunctionTableLayout::equal(Self, Self) -> Bool
+pub fn FunctionTableLayout::not_equal(Self, Self) -> Bool
+pub fn FunctionTableLayout::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct Handle {
+  handle : UInt64
+  type_name : String
+  object_name : String
+  attributes : UInt32
+  granted_access : UInt32
+  handle_count : UInt32
+  pointer_count : UInt32
+  object_info_rva : UInt64
+  descriptor_size : UInt32
+}
+pub fn Handle::equal(Self, Self) -> Bool
+pub fn Handle::not_equal(Self, Self) -> Bool
+pub fn Handle::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct Header {
+  signature : UInt32
+  version : UInt32
+  number_of_streams : UInt32
+  stream_directory_rva : UInt64
+  checksum : UInt32
+  time_date_stamp : UInt32
+  flags : UInt64
+}
+pub fn Header::equal(Self, Self) -> Bool
+pub fn Header::not_equal(Self, Self) -> Bool
+pub fn Header::to_repr(Self) -> @debug.Repr
+
+pub(all) struct JsonOptions {
+  path : String?
+  symbols : SymbolStore?
+  walk : StackWalkOptions
+  all_threads : Bool
+}
+
+#derive(Eq, @debug.Debug)
+pub(all) struct LocationDescriptor {
+  size : UInt32
+  rva : UInt64
+}
+pub fn LocationDescriptor::equal(Self, Self) -> Bool
+pub fn LocationDescriptor::not_equal(Self, Self) -> Bool
+pub fn LocationDescriptor::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct MemoryDescriptor {
+  start_address : UInt64
+  location : LocationDescriptor
+}
+pub fn MemoryDescriptor::equal(Self, Self) -> Bool
+pub fn MemoryDescriptor::not_equal(Self, Self) -> Bool
+pub fn MemoryDescriptor::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct MemoryInfo {
+  base_address : UInt64
+  allocation_base : UInt64
+  allocation_protect : UInt32
+  region_size : UInt64
+  state : UInt32
+  protect : UInt32
+  type_ : UInt32
+}
+pub fn MemoryInfo::end_address(Self) -> UInt64
+pub fn MemoryInfo::equal(Self, Self) -> Bool
+pub fn MemoryInfo::not_equal(Self, Self) -> Bool
+pub fn MemoryInfo::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct MemoryMap {
+  regions : Array[MemoryRegion]
+  dropped : UInt32
+}
+pub fn MemoryMap::clipped_count(Self) -> UInt32
+pub fn MemoryMap::equal(Self, Self) -> Bool
+pub fn MemoryMap::file_rva_for(Self, UInt64, UInt64) -> UInt64?
+pub fn MemoryMap::not_equal(Self, Self) -> Bool
+pub fn MemoryMap::readable(Self, UInt64, UInt64) -> Bool
+pub fn MemoryMap::region_at(Self, UInt64) -> MemoryRegion?
+pub fn MemoryMap::region_count(Self) -> Int32
+pub fn MemoryMap::region_for(Self, UInt64, UInt64) -> MemoryRegion?
+pub fn MemoryMap::to_repr(Self) -> @debug.Repr
+pub fn MemoryMap::total_bytes(Self) -> UInt64
+
+#derive(Eq, @debug.Debug)
+pub(all) struct MemoryRegion {
+  start_address : UInt64
+  declared_size : UInt64
+  size : UInt64
+  file_rva : UInt64
+}
+pub fn MemoryRegion::contains(Self, UInt64) -> Bool
+pub fn MemoryRegion::covers(Self, UInt64, UInt64) -> Bool
+pub fn MemoryRegion::end_address(Self) -> UInt64
+pub fn MemoryRegion::equal(Self, Self) -> Bool
+pub fn MemoryRegion::not_equal(Self, Self) -> Bool
+pub fn MemoryRegion::to_repr(Self) -> @debug.Repr
+pub fn MemoryRegion::was_clipped(Self) -> Bool
+
+#derive(Eq, @debug.Debug)
+pub(all) struct MiscInfo {
+  info_version : UInt32
+  size_of_info : UInt32
+  flags1 : UInt32
+  process_id : UInt32?
+  process_times : ProcessTimes?
+  processor_power_info : ProcessorPowerInfo?
+  process_integrity_level : UInt32?
+  process_execute_flags : UInt32?
+  protected_process : UInt32?
+  time_zone_id : UInt32?
+  time_zone : TimeZoneInformation?
+  build_string : String?
+  dbg_build_string : String?
+  xstate_config : XStateConfig?
+  process_cookie : UInt32?
+}
+pub fn MiscInfo::equal(Self, Self) -> Bool
+pub fn MiscInfo::not_equal(Self, Self) -> Bool
+pub fn MiscInfo::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct Module {
+  base_of_image : UInt64
+  size_of_image : UInt32
+  checksum : UInt32
+  time_date_stamp : UInt32
+  name : String
+  version_info : FixedFileInfo
+  code_view : CodeView
+  misc_record : LocationDescriptor
+  reserved0 : UInt64
+  reserved1 : UInt64
+}
+pub fn Module::code_view_pdb_name(Self) -> String
+pub fn Module::contains(Self, UInt64) -> Bool
+pub fn Module::end_address(Self) -> UInt64
+pub fn Module::equal(Self, Self) -> Bool
+pub fn Module::file_version(Self) -> String
+pub fn Module::not_equal(Self, Self) -> Bool
+pub fn Module::offset_of(Self, UInt64) -> UInt64?
+pub fn Module::product_version(Self) -> String
+pub fn Module::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ModuleList {
+  modules : Array[Module]
+  skipped : Int32
+}
+pub fn ModuleList::equal(Self, Self) -> Bool
+pub fn ModuleList::not_equal(Self, Self) -> Bool
+pub fn ModuleList::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ProcessTimes {
+  create_time : UInt32
+  user_time : UInt32
+  kernel_time : UInt32
+}
+pub fn ProcessTimes::equal(Self, Self) -> Bool
+pub fn ProcessTimes::not_equal(Self, Self) -> Bool
+pub fn ProcessTimes::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ProcessorPowerInfo {
+  max_mhz : UInt32
+  current_mhz : UInt32
+  mhz_limit : UInt32
+  max_idle_state : UInt32
+  current_idle_state : UInt32
+}
+pub fn ProcessorPowerInfo::equal(Self, Self) -> Bool
+pub fn ProcessorPowerInfo::not_equal(Self, Self) -> Bool
+pub fn ProcessorPowerInfo::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ResolvedFrame {
+  name : String
+  start : UInt64
+  kind : String
+  file : String
+  line : Int64?
+}
+pub fn ResolvedFrame::equal(Self, Self) -> Bool
+pub fn ResolvedFrame::not_equal(Self, Self) -> Bool
+pub fn ResolvedFrame::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct StackFrame {
+  address : UInt64
+  stack_address : UInt64?
+  kind : String
+  module_index : Int32?
+  module_name : String
+  offset : UInt64?
+  in_function_table : Bool?
+  return_site : String
+}
+pub fn StackFrame::equal(Self, Self) -> Bool
+pub fn StackFrame::not_equal(Self, Self) -> Bool
+pub fn StackFrame::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct StackWalk {
+  thread_id : UInt32
+  layout : String
+  pointer_size : UInt32
+  supported : Bool
+  reason : String
+  frames : Array[StackFrame]
+  notes : Array[String]
+  fp_frames : Int32
+  scanned_slots : Int64
+  scan_limited : Bool
+  window_low : UInt64?
+  window_high : UInt64?
+}
+pub fn StackWalk::equal(Self, Self) -> Bool
+pub fn StackWalk::not_equal(Self, Self) -> Bool
+pub fn StackWalk::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct StackWalkOptions {
+  max_frames : Int32
+  max_scan_bytes : Int64
+  scan : Bool
+}
+pub fn StackWalkOptions::equal(Self, Self) -> Bool
+pub fn StackWalkOptions::not_equal(Self, Self) -> Bool
+pub fn StackWalkOptions::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct StreamEntry {
+  stream_type : UInt32
+  data_size : UInt32
+  rva : UInt64
+}
+pub fn StreamEntry::equal(Self, Self) -> Bool
+pub fn StreamEntry::not_equal(Self, Self) -> Bool
+pub fn StreamEntry::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SymFunction {
+  address : UInt64
+  size : UInt64
+  name : String
+  lines : Array[SymLine]
+}
+pub fn SymFunction::equal(Self, Self) -> Bool
+pub fn SymFunction::not_equal(Self, Self) -> Bool
+pub fn SymFunction::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SymLine {
+  address : UInt64
+  size : UInt64
+  line : Int64
+  file : Int64
+}
+pub fn SymLine::equal(Self, Self) -> Bool
+pub fn SymLine::not_equal(Self, Self) -> Bool
+pub fn SymLine::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SymPublic {
+  address : UInt64
+  size : UInt64
+  name : String
+}
+pub fn SymPublic::equal(Self, Self) -> Bool
+pub fn SymPublic::not_equal(Self, Self) -> Bool
+pub fn SymPublic::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SymbolFile {
+  os : String
+  arch : String
+  debug_id : String
+  name : String
+  files : Array[String]
+  functions : Array[SymFunction]
+  publics : Array[SymPublic]
+  line_records : Int64
+  other_records : Int64
+  bad_records : Int64
+  total_function_size : UInt64
+  ascending : Bool
+  valid : Bool
+}
+pub fn SymbolFile::equal(Self, Self) -> Bool
+pub fn SymbolFile::not_equal(Self, Self) -> Bool
+pub fn SymbolFile::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SymbolStore {
+  loaded : Array[(String, SymbolFile)]
+  rejected : Array[String]
+}
+pub fn SymbolStore::equal(Self, Self) -> Bool
+pub fn SymbolStore::not_equal(Self, Self) -> Bool
+pub fn SymbolStore::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SymbolTarget {
+  name : String
+  kind : String
+  symbol_start : UInt64?
+  offset : UInt64?
+  file : String
+  line : Int64?
+  symbol_source : String
+  matched_by : String
+  status : String
+  candidates : Int32
+}
+pub fn SymbolTarget::equal(Self, Self) -> Bool
+pub fn SymbolTarget::not_equal(Self, Self) -> Bool
+pub fn SymbolTarget::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SystemInfo {
+  processor_architecture : UInt16
+  processor_level : UInt16
+  processor_revision : UInt16
+  number_of_processors : Byte
+  product_type : Byte
+  major_version : UInt32
+  minor_version : UInt32
+  build_number : UInt32
+  platform_id : UInt32
+  csd_version : String
+  suite_mask : UInt16
+  reserved2 : UInt16
+  cpu : Array[UInt32]
+  cpu_vendor : String?
+}
+pub fn SystemInfo::equal(Self, Self) -> Bool
+pub fn SystemInfo::not_equal(Self, Self) -> Bool
+pub fn SystemInfo::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct SystemTime {
+  year : UInt16
+  month : UInt16
+  day_of_week : UInt16
+  day : UInt16
+  hour : UInt16
+  minute : UInt16
+  second : UInt16
+  milliseconds : UInt16
+}
+pub fn SystemTime::equal(Self, Self) -> Bool
+pub fn SystemTime::is_empty(Self) -> Bool
+pub fn SystemTime::not_equal(Self, Self) -> Bool
+pub fn SystemTime::rule_text(Self) -> String
+pub fn SystemTime::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct Thread {
+  id : UInt32
+  suspend_count : UInt32
+  priority_class : UInt32
+  priority : UInt32
+  teb : UInt64
+  stack : MemoryDescriptor
+  context : LocationDescriptor
+  backing_store : MemoryDescriptor?
+  entry_size : UInt32
+}
+pub fn Thread::equal(Self, Self) -> Bool
+pub fn Thread::not_equal(Self, Self) -> Bool
+pub fn Thread::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ThreadInfo {
+  thread_id : UInt32
+  dump_flags : UInt32
+  dump_error : UInt32
+  exit_status : UInt32
+  create_time : UInt64
+  exit_time : UInt64
+  kernel_time : UInt64
+  user_time : UInt64
+  start_address : UInt64
+  affinity : UInt64
+}
+pub fn ThreadInfo::equal(Self, Self) -> Bool
+pub fn ThreadInfo::not_equal(Self, Self) -> Bool
+pub fn ThreadInfo::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct ThreadName {
+  thread_id : UInt32
+  name : String
+}
+pub fn ThreadName::equal(Self, Self) -> Bool
+pub fn ThreadName::not_equal(Self, Self) -> Bool
+pub fn ThreadName::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct TimeZoneInformation {
+  bias : Int32
+  standard_name : String
+  standard_date : SystemTime
+  standard_bias : Int32
+  daylight_name : String
+  daylight_date : SystemTime
+  daylight_bias : Int32
+}
+pub fn TimeZoneInformation::equal(Self, Self) -> Bool
+pub fn TimeZoneInformation::not_equal(Self, Self) -> Bool
+pub fn TimeZoneInformation::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct UnloadedModule {
+  base_of_image : UInt64
+  size_of_image : UInt32
+  checksum : UInt32
+  time_date_stamp : UInt32
+  name : String
+}
+pub fn UnloadedModule::end_address(Self) -> UInt64
+pub fn UnloadedModule::equal(Self, Self) -> Bool
+pub fn UnloadedModule::not_equal(Self, Self) -> Bool
+pub fn UnloadedModule::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct UnloadedModuleList {
+  modules : Array[UnloadedModule]
+  skipped : UInt32
+  declared_count : UInt64
+}
+pub fn UnloadedModuleList::equal(Self, Self) -> Bool
+pub fn UnloadedModuleList::not_equal(Self, Self) -> Bool
+pub fn UnloadedModuleList::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct XStateConfig {
+  size_of_info : UInt32
+  context_size : UInt32
+  enabled_features : UInt64
+  features : Array[XStateFeature]
+}
+pub fn XStateConfig::enabled(Self, Int32) -> Bool
+pub fn XStateConfig::equal(Self, Self) -> Bool
+pub fn XStateConfig::feature(Self, Int32) -> XStateFeature?
+pub fn XStateConfig::not_equal(Self, Self) -> Bool
+pub fn XStateConfig::to_repr(Self) -> @debug.Repr
+
+#derive(Eq, @debug.Debug)
+pub(all) struct XStateFeature {
+  offset : UInt32
+  size : UInt32
+}
+pub fn XStateFeature::equal(Self, Self) -> Bool
+pub fn XStateFeature::not_equal(Self, Self) -> Bool
+pub fn XStateFeature::to_repr(Self) -> @debug.Repr
+
+// Type aliases
+pub type Rva = UInt64
+
+// Traits
