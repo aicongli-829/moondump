@@ -1,0 +1,65 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "aicongli-829/moondump/corpus"
+
+import {
+  "aicongli-829/moondump",
+}
+
+// Values
+pub fn assert_count(String, Int32, Int32) -> Unit raise
+
+pub fn assert_crash_stack_walk(String, @moondump.Dump, Array[@moondump.StreamEntry], @moondump.StackWalkOptions, Int32, String) -> Unit raise
+
+pub fn assert_long_tail_absent(String, @moondump.Dump, Array[@moondump.StreamEntry]) -> Unit raise
+
+pub fn assert_memory(String, @moondump.Dump, Array[@moondump.StreamEntry], String, String) -> Unit raise
+
+pub fn assert_misc_info(String, @moondump.Dump, Array[@moondump.StreamEntry], String) -> Unit raise
+
+pub fn assert_module(String, @moondump.ModuleList, Int32, String) -> Unit raise
+
+pub fn assert_stream_present(String, Array[@moondump.StreamEntry], UInt32) -> Unit raise
+
+pub fn assert_system_info(String, @moondump.Dump, Array[@moondump.StreamEntry], String) -> Unit raise
+
+pub fn assert_threads_and_exception(String, @moondump.Dump, Array[@moondump.StreamEntry], String, String, String) -> Unit raise
+
+pub fn assert_walk_invariants(String, @moondump.Dump, Array[@moondump.StreamEntry]) -> Unit raise
+
+pub fn crash_stack_walk_line(@moondump.Dump, Array[@moondump.StreamEntry], @moondump.StackWalkOptions, Int32) -> String raise
+
+pub fn crash_symbol_lines(@moondump.Dump, Array[@moondump.StreamEntry], @moondump.SymbolStore) -> String raise
+
+pub fn exception_line(@moondump.Dump, Array[@moondump.StreamEntry]) -> String raise
+
+pub fn find_fixture(String) -> Bytes?
+
+pub let fixtures : Array[String]
+
+pub fn memory_map_line(@moondump.Dump, Array[@moondump.StreamEntry]) -> String raise
+
+pub fn memory_read_lines(@moondump.Dump, Array[@moondump.StreamEntry]) -> String raise
+
+pub fn misc_info_line(@moondump.Dump, Array[@moondump.StreamEntry]) -> String raise
+
+pub fn module_line(@moondump.Module) -> String
+
+pub fn open_fixture(String) -> @moondump.Dump raise
+
+pub fn read_fixture(String) -> Bytes raise
+
+pub fn stack_walk_line_of(@moondump.Dump, Array[@moondump.StreamEntry], @moondump.Thread, @moondump.LocationDescriptor, @moondump.StackWalkOptions, Int32) -> String raise
+
+pub fn system_info_line(@moondump.Dump, Array[@moondump.StreamEntry]) -> String raise
+
+pub fn thread_context_lines(@moondump.Dump, Array[@moondump.StreamEntry]) -> String raise
+
+pub fn thread_list_line(@moondump.Dump, Array[@moondump.StreamEntry]) -> String
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

@@ -1,0 +1,10 @@
+import {
+  "aicongli-829/moondump" @lib,
+  "moonbitlang/x/fs",
+}
+
+// JSON 报告的用例要把 `stringify` 出来的文本再读回来，解析器在核心库的 json 包里。
+// 只有测试包用得到，正式构建不引进依赖。
+import {
+  "moonbitlang/core/json",
+} for "test"
