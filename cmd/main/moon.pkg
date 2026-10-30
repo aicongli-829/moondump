@@ -1,0 +1,7 @@
+import {
+  "aicongli-829/moondump" @lib,
+  "moonbitlang/core/env",
+  "moonbitlang/x/fs",
+}
+
+pkgtype(kind: "executable")
