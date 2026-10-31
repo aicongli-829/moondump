@@ -1,0 +1,15 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "aicongli-829/moondump/examples"
+
+// Values
+pub fn readme_inspect(Bytes) -> Unit raise
+
+pub fn readme_inspect_stack(Bytes, String) -> Unit raise
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
