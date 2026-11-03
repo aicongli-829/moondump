@@ -1,0 +1,38 @@
+# 最小可跑的检查：格式化、类型检查、wasm 测试。
+# native 后端（`moon test --target native`）在本机跑通过，但不放进 CI：
+# 这份文件在推送到远端之前没法验证，宁可少一步也不要留一条常红的检查。
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up MoonBit
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> $GITHUB_PATH
+
+      - name: Versions
+        run: moon version --all
+
+      # A fresh runner has no registry index; without this, dependency
+      # resolution fails with "module was not found in the registry"
+      # (reproduced locally from a cold cache). Retried once because
+      # download.mooncakes.io has been observed to time out transiently.
+      - name: Update registry index
+        run: moon update || moon update
+
+      - name: Check formatting
+        run: moon fmt --check
+
+      - name: Type check
+        run: moon check --deny-warn
+
+      - name: Test (wasm)
+        run: moon test
